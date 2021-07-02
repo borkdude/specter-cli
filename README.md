@@ -18,8 +18,10 @@ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -e '(transform [MAP-VALS MAP
 ## Status
 
 For now this is mostly a proof of concept to see if I could get Specter working
-within the contect of SCI and `native-image`. If this is useful to you, let me
-know. With enough feedback, I might make pre-built binaries available.
+within the contect of SCI and `native-image` (see
+[this](https://github.com/borkdude/sci/issues/370) issue). If this is useful to
+you, let me know. With enough feedback, I might make pre-built binaries
+available.
 
 ## Implementation details
 
