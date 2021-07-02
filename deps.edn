@@ -1,0 +1,5 @@
+{:paths ["src" "classes"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.0-alpha1"}
+        borkdude/sci {:git/url "https://github.com/borkdude/sci"
+                      :sha "a1d162a6d4883e5ebc9cd464abc6c62fb9d65a27"}
+        com.rpl/specter {:mvn/version "1.1.3"}}}

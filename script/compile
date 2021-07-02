@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+mkdir -p classes
+rm -rf classes/*
+
+clojure -M -e "(compile 'specter-sci)"
+
+if [ -z "$GRAALVM_HOME" ]; then
+    echo "Please set GRAALVM_HOME"
+    exit 1
+fi
+
+"$GRAALVM_HOME/bin/native-image" \
+    -cp classes:"$(clojure -Spath)" \
+    --initialize-at-build-time \
+    --no-server --no-fallback \
+    -H:+ReportExceptionStackTraces \
+    "-H:ReflectionConfigurationFiles=reflection.json" \
+    specter_sci

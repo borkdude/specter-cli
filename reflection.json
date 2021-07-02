@@ -1,0 +1,4 @@
+[{
+  "name" : "clojure.lang.Util",
+  "methods": [{"name": "equiv"}]
+}]
