@@ -11,7 +11,7 @@ expression. The public vars from `com.rpl.specter` are referred
 automatically. The question mark variable is bound to EDN from stdin.
 
 ``` clojure
-$ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -e '(transform [MAP-VALS MAP-VALS] inc ?)'
+$ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -e '(transform [MAP-VALS MAP-VALS] inc ?)'
 {:a {:aa 2}, :b {:ba 0, :bb 3}}
 ```
 
