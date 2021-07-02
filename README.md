@@ -1,8 +1,8 @@
 # specter CLI
 
-An example CLI that uses a [SCI](https://github.com/borkdude/sci) configuration
-that enables runtime usage of
-[specter](https://github.com/redplanetlabs/specter) in native images.
+An native CLI that uses [specter](https://github.com/redplanetlabs/specter) to transform EDN from stdin.
+
+This CLI is compiled with GraalVM `native-image` and executed using [SCI](https://github.com/borkdude/sci).
 
 ## Usage
 
