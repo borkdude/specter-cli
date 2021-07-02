@@ -126,7 +126,7 @@
 
 (defn -main [& [_ func]]
   (let [edn (edn/read-string (slurp *in*))
-        func (format "(use 'com.rpl.specter) (fn [q] %s)" func)
+        func (format "(use 'com.rpl.specter) (fn [?] %s)" func)
         func (sci/eval-string* ctx func)]
     (prn (func edn))
     #_(sci/eval-string*

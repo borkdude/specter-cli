@@ -6,12 +6,12 @@ that enables runtime usage of
 
 ## Usage
 
-Currently the CLI accepts one argument, `-q`, that represents a body of a
-function with one argument, `q`. The public vars from `com.rpl.specter` are
-referred automatically.
+Currently the CLI accepts one argument, `-e`, that represents a Clojure
+expression. The public vars from `com.rpl.specter` are referred
+automatically. The question mark variable is bound to EDN from stdin.
 
 ``` clojure
-$ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -q '(transform [MAP-VALS MAP-VALS] inc q)'
+$ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -e '(transform [MAP-VALS MAP-VALS] inc ?)'
 {:a {:aa 2}, :b {:ba 0, :bb 3}}
 ```
 
