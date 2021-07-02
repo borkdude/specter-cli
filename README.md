@@ -14,9 +14,9 @@ The configuration contains a number of interesting tweaks:
 
 For GraalVM we need to provide a reflection config that contains
 `clojure.lang.Equiv/equals` since the `path` macro generates code which does
-interop on this class. Since we need to do this interop at runtime, GraalVM
-needs a reflection config to be able to find the method. We also need to add
-`clojure.lang.Util` to SCI's `:classes` option for the same reason.
+interop on this class and this macro is expanded at runtime inside the SCI
+context. We also need to add `clojure.lang.Util` to SCI's `:classes` option for
+the same reason.
 
 ## Build
 
