@@ -1,7 +1,21 @@
-# specter-sci
+# specter CLI
 
-A [SCI](https://github.com/borkdude/sci) configuration that enables runtime usage of
+An example CLI that uses a [SCI](https://github.com/borkdude/sci) configuration
+that enables runtime usage of
 [specter](https://github.com/redplanetlabs/specter) in native images.
+
+## Usage
+
+Currently the CLI accepts one argument, `-q`, that represents a body of a
+function with one argument, `q`. The public vars from `com.rpl.specter` are
+referred automatically.
+
+``` clojure
+$ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -q '(transform [MAP-VALS MAP-VALS] inc q)'
+{:a {:aa 2}, :b {:ba 0, :bb 3}}
+```
+
+## Implementation details
 
 The configuration contains a number of interesting tweaks:
 
@@ -23,30 +37,9 @@ the same reason.
 Set `GRAALVM_HOME` to your local GraalVM install.
 Run `script/build`.
 
-## Run
-
-``` clojure
-$ ./specter_sci
-{:a {:aa 2}, :b {:ba 0, :bb 3}}
-[3 3 18 6 12]
-[2 1 3 6 10 4 8]
-{:a [1 2 3]}
-{:a {:b {}}}
-{}
-[0 2 2 4 4 5 6 7]
-[0 1 :a :b :c :d :e 4 5 6 7 8 9]
-[[1 :a :b] (1 2 :a :b) [:c :a :b]]
-[2 1 2 6 7 4 1 2]
-[10]
-[0 1 2 3 10 5 8 7 6 9 4 11 12 13 14 15]
-[[1 2 3 4 5 6 :c :d] [7 0 -1] [8 8 :c :d] []]
-[{:a 1, :b 3} {:a -8, :b -10} {:a 14, :b 10} {:a 3}]
-{:a 11, :b 3}
-[{:a 2, :c [2 3], :d 4} {:a 4, :c [1 11 0]} {:a -1, :c [1 1 1], :d 2}]
-```
-
 ## License
 
-[Unlicense](https://unlicense.org/).
+Copyright © 2021 Michiel Borkent
 
-
+This Specter CLI is licensed under Apache License v2.0, same as Specter. See
+LICENSE.

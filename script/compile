@@ -18,4 +18,5 @@ fi
     --no-server --no-fallback \
     -H:+ReportExceptionStackTraces \
     "-H:ReflectionConfigurationFiles=reflection.json" \
+    "-H:Name=specter" \
     specter_sci
