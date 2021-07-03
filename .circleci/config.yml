@@ -39,7 +39,7 @@ jobs:
     environment:
       LEIN_ROOT: "true"
       GRAALVM_HOME: /home/circleci/graalvm-ce-java11-21.1.0
-      PUGET_PLATFORM: linux # used in release script
+      SPECTER_PLATFORM: linux # used in release script
       PUGET_TEST_ENV: native
     steps:
       - checkout
@@ -95,7 +95,7 @@ jobs:
       xcode: "12.0.0"
     environment:
       GRAALVM_HOME: /Users/distiller/graalvm-ce-java11-21.1.0/Contents/Home
-      PUGET_PLATFORM: macos # used in release script
+      SPECTER_PLATFORM: macos # used in release script
       PUGET_TEST_ENV: native
     steps:
       - checkout
