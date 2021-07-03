@@ -2,15 +2,20 @@
 
 set -euo pipefail
 
+if [ -z "$GRAALVM_HOME" ]; then
+    echo "Please set GRAALVM_HOME"
+    exit 1
+fi
+
+export PATH="$GRAALVM_HOME/bin:$PATH"
+export JAVA_HOME="$GRAALVM_HOME"
+
 mkdir -p classes
 rm -rf classes/*
 
 clojure -M -e "(compile 'specter-sci)"
 
-if [ -z "$GRAALVM_HOME" ]; then
-    echo "Please set GRAALVM_HOME"
-    exit 1
-fi
+"$GRAALVM_HOME/bin/gu" install native-image
 
 "$GRAALVM_HOME/bin/native-image" \
     -cp classes:"$(clojure -Spath)" \
