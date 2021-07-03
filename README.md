@@ -4,6 +4,12 @@ An native CLI that uses [Specter](https://github.com/redplanetlabs/specter) to t
 
 This CLI is compiled with GraalVM `native-image` and executed using [SCI](https://github.com/borkdude/sci).
 
+## Download
+
+You can get pre-built binaries for macOS and linux under
+[Releases](https://github.com/borkdude/specter-cli/releases). If your OS is not
+yet supported, you can try [building](#build) the CLI yourself.
+
 ## Usage
 
 Currently the CLI accepts one argument, `-e`, that represents a Clojure
@@ -19,9 +25,7 @@ $ echo '{:a {:aa 1} :b {:ba -1 :bb 2}}' | ./specter -e '(transform [MAP-VALS MAP
 
 For now this is mostly a proof of concept to see if I could get Specter working
 within the contect of SCI and `native-image` (see
-[this](https://github.com/borkdude/sci/issues/370) issue). If this is useful to
-you, let me know. With enough feedback, I might make pre-built binaries
-available.
+[this](https://github.com/borkdude/sci/issues/370) issue).
 
 ## Implementation details
 
